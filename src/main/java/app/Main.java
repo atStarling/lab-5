@@ -1,6 +1,7 @@
 package app;
 
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * The Main class of our application.
@@ -20,9 +21,17 @@ public class Main {
                                             .addLoginUseCase()
                                             .addChangePasswordUseCase()
                                             .addLogoutUseCase()
+
                                             .build();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         application.pack();
+
+        application.setSize(screenSize.width/2, screenSize.height/2);
+        application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        application.setIconImage(new ImageIcon("src/main/resources/icon.png").getImage());
+
+
         application.setVisible(true);
     }
 }
